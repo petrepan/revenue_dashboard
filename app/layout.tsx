@@ -1,3 +1,7 @@
+import Invoice from "@/components/assets/invoice";
+import LinkInBio from "@/components/assets/link_in_bio";
+import MediaKit from "@/components/assets/media_kit";
+import Store from "@/components/assets/store";
 import Nav from "@/components/common/nav";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -48,6 +52,20 @@ export default function RootLayout({
     <html lang="en">
       <body className="py-4 relative">
         <Providers>
+          <div className="fixed top-[310px] left-4 grid gap-6 px-3 py-4 rounded-[100px] bg-white shadow-[0px_6px_12px_0px_rgba(92,115,131,0.08),0px_4px_8px_0px_rgba(92,115,131,0.08)]">
+            <div className="cursor-pointer">
+              <LinkInBio />
+            </div>
+            <div className="cursor-pointer">
+              <Store />
+            </div>
+            <div className="cursor-pointer">
+              <MediaKit />
+            </div>
+            <div className="cursor-pointer">
+              <Invoice />
+            </div>
+          </div>
           <Nav />
           {children}
         </Providers>
