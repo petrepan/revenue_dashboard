@@ -5,7 +5,7 @@ export const useCreatorData = () => {
     queryKey: ["user"],
     queryFn: async () => {
       try {
-        const res = await fetch("https://fe-task-api.mainstack.io/user");
+        const res = await fetch(`${process.env.NEXT_BE_BASE_URL}/user`);
         return await res.json();
       } catch (error) {
         throw error;
