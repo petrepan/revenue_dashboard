@@ -8,7 +8,7 @@ import Chat from "../assets/chat";
 import GroupUser from "../assets/group_user";
 import Hamburger from "../assets/hamburger";
 import Home from "../assets/home";
-import Logo from "../assets/Logo";
+import Logo from "../assets/logo";
 import Money from "../assets/money";
 import Notification from "../assets/notification";
 import Widgets from "../assets/widgets";
