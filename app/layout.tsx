@@ -1,3 +1,4 @@
+import Nav from "@/components/common/nav";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
@@ -45,8 +46,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="py-4">
-        <Providers>{children}</Providers>
+      <body className="py-4 relative">
+        <Providers>
+          <Nav />
+          {children}
+        </Providers>
       </body>
     </html>
   );
