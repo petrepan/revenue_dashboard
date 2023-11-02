@@ -40,14 +40,14 @@ const Transactions = () => {
     setFilterCriteria({});
   };
 
+  const filterCriteriaPayload = {
+    type: transactionType?.map((item) => item.name.toLowerCase()),
+    startDate: convertDate(startDate),
+    endDate: convertDate(endDate),
+    status: transactionStatus?.map((item) => item.name.toLowerCase()),
+  };
+
   const applyFilter = () => {
-    const filterCriteriaPayload = {
-      type: transactionType?.map((item) => item.name.toLowerCase()),
-      startDate: convertDate(startDate),
-      endDate: convertDate(endDate),
-      status: transactionStatus?.map((item) => item.name.toLowerCase()),
-    };
-    
     setFilterCriteria(filterCriteriaPayload);
   };
 
@@ -73,7 +73,12 @@ const Transactions = () => {
             {filterTransactions(data, filterCriteria)?.length || 0} Transactions
           </div>
           <div className="text-[#56616B] text-sm font-medium">
-            Your transactions for All Time
+            Your transactions{" "}
+            {!countTruthyKeys(filterCriteria) && `for all Time`}
+            {filterCriteriaPayload.startDate &&
+              filterCriteriaPayload.endDate &&
+              countTruthyKeys(filterCriteria) ?
+              `between ${filterCriteriaPayload.startDate} and ${filterCriteriaPayload.endDate}`: ""}
           </div>
         </div>
         <div className="flex gap-3 items-center">
